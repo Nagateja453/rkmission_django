@@ -1,0 +1,80 @@
+{% extends 'RK_mission/index.html' %}
+{% block content %}
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/tinymce.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/jquery.tinymce.min.js"></script>
+ <div class="container-fluid content1 ">
+	<form action='' method='post' enctype="multipart/form-data">
+		{% csrf_token %}
+		<h2 class="mon">ADD POST</h2>
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-sm-6 col-xs-12 desg">
+				<label>Date of birth</label>
+				{{a_form.Date_of_Birth}}
+				<label>place of birth</label>
+				{{a_form.Place_Of_Birth}}	
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>parents</label>
+				{{a_form.Parents}}
+				<label>wife</label>
+				{{a_form.Wife}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>philosopy</label>
+				{{a_form.Philosopy}}
+				<label>religious</label>
+				{{a_form.Religious_Views}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>Place of death</label>
+				{{a_form.Place_Of_Death}}
+				<label>Memorial</label>
+				{{a_form.Memorial}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>Excerpt</label>
+				{{a_form.excerpt}}
+				<label>Title</label>
+				{{a_form.title}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>Project_image</label>
+				{{a_form.project_image1}}
+				<label>Slug</label>
+				{{a_form.slug}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>Meta_description</label>
+				{{a_form.meta_description}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>Keywords</label>
+				{{a_form.keywords}}
+			</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				{{a_form.}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>Education</label>
+				{{a_form.Education}}
+				<label>Spouse</label>
+				{{a_form.Spouse}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>Guru</label>
+				{{a_form.Guru}}
+				<label>Death</label>
+				{{a_form.Death}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<label>Content</label>
+				{{a_form.content}}
+			</div>
+		
+	 	<button class="btn btn-info but" role="button" type="submit">save</button>
+	</form>
+</div>
+{% endblock %}

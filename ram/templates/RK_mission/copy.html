@@ -1,0 +1,258 @@
+{% extends "RK_mission/index.html" %}
+{% load staticfiles %}
+{% block content %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+	.slideshowContainer {
+  position: relative;
+  overflow: hidden;
+  margin: 50px 0 75px;
+  width: 100%;
+  height: 500px;
+}
+
+.imageSlides {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: -1;
+}
+
+/* add 'visible' class via Javascript */
+.visible {
+  opacity: 1;
+}
+
+.slideshowArrow {
+  font-size: 7em;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.slideshowArrow:hover {
+  opacity: 0.75;
+}
+
+#leftArrow {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#rightArrow {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.slideshowCircles {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.circle {
+  display: inline-block;
+  margin-left: 3px;
+  margin-right: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  transition: 1s ease-in-out;
+}
+
+.dot {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: solid 2px rgba(255, 255, 255, 0.5);
+}
+	.img_top
+	{
+		margin-top:3%;
+	}
+	.text_cen
+	{
+		text-align:center;
+		margin-top:5%;
+		font-weight: bold;
+		color: rgb(68, 63, 63);
+	}
+	.holy_triooo img {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+}
+a {
+    color: #ea6422;
+    text-align:center;
+}
+.bord
+{
+	background-color: #ebebeb;
+	padding-bottom: 3%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.pad
+{
+
+	padding:0px;
+}
+	</style>
+
+	<<div class="slideshowContainer">
+  
+<!-- Replace the image 'src' with the images in your project.
+Javascript is set up so that you can add as many images as you like, but make sure that you match the number of 'circle' span elements (below) to the number of images -->
+  <img class="imageSlides" src="http://s1.picswalls.com/wallpapers/2015/09/20/beautiful-hd-wallpaper-2015_111526537_269.jpg" alt="beach side city view">
+  <img class="imageSlides" src="http://4.bp.blogspot.com/-oxlezteeOII/TfiTImj4RlI/AAAAAAAAA1k/UAgctmU5VZo/s1600/Widescreen+Unique+And+Beautiful+Photography+%25284%2529.jpg" alt="leaf on the ground">
+  <img class="imageSlides" src="https://i.pinimg.com/originals/cf/ed/a0/cfeda03d01da4b779093c9d928c01dee.jpg" alt="lake surrounded by mountains">
+  
+<!-- I would recommend to replace these 'span' elements with 'img' files
+for each the left and right arrow that fits your project, and size accordingly.
+I've shown 'span' elements because I didn't want to upload files. -->
+  <span id ="leftArrow" class="slideshowArrow">&#8249;</span>
+  <span id ="rightArrow" class="slideshowArrow">&#8250;</span>
+  
+  <div class="slideshowCircles">
+<!-- Filled 'dot' class is set to first image in slideshow, and then via Javascript the filled 'dot' class follows the current image.
+Make sure you match the number of these 'circle' span elements to the number of images in your slideshow. -->
+    <span class="circle dot"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+  </div>
+  
+</div>
+<!-- </div> -->
+	<h3 class="text_cen"> Holy Trio</h3>
+	<div class="container">
+		<div class="col-md-12 col-sm-12 col-xs-12 img_top holy_triooo">
+		{% for a in a %}
+			<div class="col-md-4 col-sm-4 col-xs-4">
+				<img src="/media/{{a.project_image1}}">
+				<h4 style="text-align:center;margin-top:10%"><b>{{a.title}}</b></h4>
+				<p style="text-align:justify;line-height: 1.8;">{{a.excerpt}}</p>
+				<p style="text-align:center;"><a href="">Read more</a></p>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+	<div class="container-fluid pad">
+		<div class="col-md-12 col-sm-12 col-xs-12 bord">
+			<div class="col-md-6 col-sm-12 col-xs-12 ">
+			<iframe width="700" height="500" src="https://www.youtube.com/embed/DGIxruedZ5M?feature=oembed" style="margin-top:8%"></iframe>
+			</div>
+			<div class="col-md-6 col-sm-12 col-xs-12 ">
+			<h3 style="color: rgb(68, 63, 63);margin-top:8%;"><b>About us</b></h3>
+				<p style="line-height: 2.0;font-size: 16px;">
+					Swami Vivekananda used to say that education is the panacea of all social evils. But by education he did not mean merely book learning. He said, <b>‘We must have life-building, man-making, character-making assimilation of ideas.’ And added ‘What we want is that education by which character is formed strength of mind is increased, the intellect is expanded and by which one can stand on one’s feet.’</b> This is the ideal of education which we try to put into effect at Narendrapur.
+				</p>
+
+				<p style="line-height: 2.0;font-size: 16px;">
+					The Vidyalaya, therefore, endeavors to educate the students in its charge according to the best traditions of the country, while instructing them in all directions – <b>physically, mentally, intellectually and spiritually</b>.As it prepares the students for public examination, it also tries to attend to their all round growth and development so that they may become strong and healthy citizens of the country rooted in sound moral principles, learn to respect the higher values of life and become conscious of their obligation to the society and its people.
+				</p>
+				<a href="" style="color:red">Readmore</a>
+				</p>
+
+			</div>
+		</div>
+	</div>
+	<script>
+	var imageSlides = document.getElementsByClassName('imageSlides');
+var circles = document.getElementsByClassName('circle');
+var leftArrow = document.getElementById('leftArrow');
+var rightArrow = document.getElementById('rightArrow');
+var counter = 0;
+
+// HIDE ALL IMAGES FUNCTION
+function hideImages() {
+  for (var i = 0; i < imageSlides.length; i++) {
+    imageSlides[i].classList.remove('visible');
+  }
+}
+
+// REMOVE ALL DOTS FUNCTION
+function removeDots() {
+  for (var i = 0; i < imageSlides.length; i++) {
+    circles[i].classList.remove('dot');
+  }
+}
+
+// SINGLE IMAGE LOOP/CIRCLES FUNCTION
+function imageLoop() {
+  var currentImage = imageSlides[counter];
+  var currentDot = circles[counter];
+  currentImage.classList.add('visible');
+  removeDots();
+  currentDot.classList.add('dot');
+  counter++;
+}
+
+// LEFT & RIGHT ARROW FUNCTION & CLICK EVENT LISTENERS
+function arrowClick(e) {
+  var target = e.target;
+  if (target == leftArrow) {
+    clearInterval(imageSlideshowInterval);
+    hideImages();
+    removeDots();
+    if (counter == 1) {
+      counter = (imageSlides.length - 1);
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 10000);
+    } else {
+      counter--;
+      counter--;
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 10000);
+    }
+  } 
+  else if (target == rightArrow) {
+    clearInterval(imageSlideshowInterval);
+    hideImages();
+    removeDots();
+    if (counter == imageSlides.length) {
+      counter = 0;
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 10000);
+    } else {
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 10000);
+    }
+  }
+}
+
+leftArrow.addEventListener('click', arrowClick);
+rightArrow.addEventListener('click', arrowClick);
+
+
+// IMAGE SLIDE FUNCTION
+function slideshow() {
+  if (counter < imageSlides.length) {
+    imageLoop();
+  } else {
+    counter = 0;
+    hideImages();
+    imageLoop();
+  }
+}
+
+// SHOW FIRST IMAGE, & THEN SET & CALL SLIDE INTERVAL
+setTimeout(slideshow, 1000);
+var imageSlideshowInterval = setInterval(slideshow, 10000);
+</script>
+{% endblock %}
+
+
+

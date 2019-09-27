@@ -1,0 +1,383 @@
+{% extends "RK_mission/index.html" %}
+{% load staticfiles %}
+{% block content %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<script src="https://use.fontawesome.com/5a8a7bb461.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<!-- /**/
+/* On smaller screens, decrease text size */
+/*@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}*/
+ -->
+<div class="slideshowContainer">
+	  <img class="imageSlides" src="/static/images/home1.jpg" alt="beach side city view" class="">
+	  <img class="imageSlides" src="/static/images/013-1350x450.jpg" alt="beach side city view">
+	  <span id ="leftArrow" class="slideshowArrow"></span>
+	  <span id ="rightArrow" class="slideshowArrow"></span>
+	  <div class="slideshowCircles">
+		<span class="circle dot"></span>
+	    <span class="circle"></span>
+	  </div>
+</div>
+
+<h3 class="text_cen"> Holy Trio</h3>
+	<div class="container-fluid ">
+		<div classs="col-md-4">
+		</div>
+		<div class="container">
+			<div class="col-md-12 col-sm-12 col-xs-12 img_top holy_triooo">
+				<!-- <div class="col-md-1"></div> -->
+				{% for a in a %}
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<img src="/media/{{a.project_image1}}" class="wqe">
+						<h4 class="tes"><b>{{a.title}}</b></h4>
+						<p class="para1">{{a.excerpt}}</p>
+						<p class="para2"><a href="{{a.slug}}">Read more</a></p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class=" pad">
+			<div class="col-md-12 col-sm-12 col-xs-12 bord">
+				<div class="col-md-6 col-sm-6 col-xs-12 no_padding">
+					<iframe width="600" height="500" src="https://www.youtube.com/embed/DGIxruedZ5M?feature=oembed" class="tope"></iframe>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 ">
+					<h3 class="htext"><b>About us</b></h3>
+					<p class="ptext">
+						Swami Vivekananda used to say that education is the panacea of all social evils. But by education he did not mean merely book learning. He said, <b>‘We must have life-building, man-making, character-making assimilation of ideas.’ And added ‘What we want is that education by which character is formed strength of mind is increased, the intellect is expanded and by which one can stand on one’s feet.’</b> This is the ideal of education which we try to put into effect at Narendrapur.
+					</p>
+					<p class="p1text" >
+						The Vidyalaya, therefore, endeavors to educate the students in its charge according to the best traditions of the country, while instructing them in all directions – <b>physically, mentally, intellectually and spiritually</b>.As it prepares the students for public examination, it also tries to attend to their all round growth and development so that they may become strong and healthy citizens of the country rooted in sound moral principles, learn to respect the higher values of life and become conscious of their obligation to the society and its people.
+					</p>
+				</div>
+			</div>
+		</div>
+		<h1 class="widget-title photext" style="color: rgb(68, 63, 63);"><b>Photo Gallery</b></h1>
+		<ul class="project-filter" id="filters"> 
+			<li><a href="#show_all"  class="show_all">Show all</a></li>
+			{% for a in imgi %}
+				<li><a href="#landscape"  class="landscape">Landscapes</a></li>
+			{% endfor %}
+			<li><a href="#nature" class="nature">Nature</a></li>
+		</ul>		
+		<div class=" read rowmarg  " id="landscape">
+		  	{% for a in imgi %}	  
+		 	<div class="column">
+		    	<img src="/media/{{a.image_field_1}}" class="soo" style="width:100%;padding:0px;">
+		    </div>	
+		    <div class="column">				
+	   	 		<img src="/media/{{a.image_field_2}}"style="width:100%;padding:0px;">	
+		    </div>
+		     <div class="column">					  
+		    	<img src="/media/{{a.image_field_3}}"style="width:100%;padding:0px;" >	
+		    </div>
+		    <div class="column">					   
+		    	<img src="/media/{{a.image_field_4}}"style="width:100%;padding:0px;">
+		    </div>	
+		    <div class="column">				    
+	       		<img src="/media/{{a.image_field_5}}" style="width:100%;padding:0px;">
+	      	</div>
+			{% endfor %}
+		</div>	
+		<div class=" read   "  id="nature">
+		   {% for a in imgi %}
+		  	<div class="column" id="imm">				    
+	       		<img src="/media/{{a.image_field_6}}" style="width:100%;padding:0px;">
+	       </div>
+	       {% endfor %}
+	     	{% for a in natuimgi %}       
+	       	<div class="column">
+		   		<img src="/media/{{a.image_field_1}}" style="width:100%;padding:0px;">
+		    </div>	
+		    <div class="column">				
+		   		<img src="/media/{{a.image_field_2}}"style="width:100%;padding:0px;">	
+		    </div>
+		     <div class="column">					  
+		   		<img src="/media/{{a.image_field_3}}"style="width:100%;padding:0px;" >	
+		    </div>
+		    <div class="column">					   
+		   		<img src="/media/{{a.image_field_4}}"style="width:100%;padding:0px;">
+		    </div>			    
+			{% endfor %}
+		</div>
+		<br>
+		<br>			
+		<hr>
+		<div class="container">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-md-4 col-sm-4 col-xs-12" style="text-align: center;">
+		        <h3 ><strong>Testimonial</strong></h3>
+		        <div  style="margin-top:10%;"></div>
+		      	<div class="slider">
+				  	<div class="slide_viewer">
+					    <div class="slide_group">
+					    	{% for a in testi %}
+					     	<div class= "slide">
+					     		<div class="col-md-12 col-sm-12 col-xs-12">
+									<p class="  ">{{a.description}}</p>
+									<p style="color: red;">{{a.name}}</p>
+									<h5>{{a.title}}</h5>
+								</div>
+								<div style="text-align:center">
+									<span class="dot"></span> 
+									<span class="dot"></span> 
+								</div>
+							</div>
+							{% endfor %}
+				  		</div>
+	  				</div>
+					
+				</div>
+  			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12" style="text-align: center;">
+				<h3 ><strong>latest news</strong></h3>
+				<div  style="margin-top:10%;"></div>
+				<div class="latest_news_box latest_news_scrool " style="text-align: left;">							
+					<div class="col-md-12 col-sm-6 col-xs-12 ">
+						 {% for a in lstnews %}
+							<h4><a href="" style="color:#ea6422;">{{a.title}}</a></h4>				
+							<div  style="border-bottom: 2px dashed grey !important;"><p>{{a.description}}</p>
+							</div>
+						{% endfor %}
+					</div>
+					<br>
+					<p>
+					<a href="/ramakrishna_new/index.php/vidyalaya-news-archives/" class="roll-button more-button">See all our news</a>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<h3 style="margin-left: 25%;color: rgb(68, 63, 63);"><b>Inquiry Form</b></h3>
+				<div  style="margin-top:10%;"></div>			
+				<form action="" method="" class="inquiry_form_desgn">
+					<input class="form-control" name="first_name" type="text" placeholder="Enter Your First Name*">
+					<br>
+					<input class="form-control" name="last_name" type="text" placeholder="Enter Your last Name*">
+					<br>
+					<input class="form-control" name="email_name" type="text" placeholder="Enter Your email Name*">
+					<br>
+					<input class="form-control" name="mobile number" type="text" placeholder="Enter Your mobile number Name*">
+					<br>
+					<select class="form-control">
+						<option>Select Preffered Programee*</option>
+						<option>Class I</option>
+						<option>Class II</option>
+						<option>Class III</option>
+						<option>Class IV</option>
+						<option>Class V</option>
+						<option>Class VI</option>
+						<option>Class VIII</option>
+					</select>
+					<button class="subv a1">SUBMIT</button>
+				</form><br/>
+				<p>Note: WE’LL REVERT BACK TO YOU SOON.</p>
+			</div>
+	</div>
+	</div>
+<script>
+	$('.slider').each(function() {
+  var $this = $(this);
+  var $group = $this.find('.slide_group');
+  var $slides = $this.find('.slide');
+  var bulletArray = [];
+  var currentIndex = 0;
+  var timeout;
+  
+  function move(newIndex) {
+    var animateLeft, slideLeft;
+    
+    advance();
+    
+    if ($group.is(':animated') || currentIndex === newIndex) {
+      return;
+    }
+    
+    bulletArray[currentIndex].removeClass('active');
+    bulletArray[newIndex].addClass('active');
+    
+    if (newIndex > currentIndex) {
+      slideLeft = '100%';
+      animateLeft = '-100%';
+    } else {
+      slideLeft = '-100%';
+      animateLeft = '100%';
+    }
+    
+    $slides.eq(newIndex).css({
+      display: 'block',
+      left: slideLeft
+    });
+    $group.animate({
+      left: animateLeft
+    }, function() {
+      $slides.eq(currentIndex).css({
+        display: 'none'
+      });
+      $slides.eq(newIndex).css({
+        left: 0
+      });
+      $group.css({
+        left: 0
+      });
+      currentIndex = newIndex;
+    });
+  }
+  
+  function advance() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      if (currentIndex < ($slides.length - 1)) {
+        move(currentIndex + 1);
+      } else {
+        move(0);
+      }
+    }, 4000);
+  }
+  
+  $('.next_btn').on('click', function() {
+    if (currentIndex < ($slides.length - 1)) {
+      move(currentIndex + 1);
+    } else {
+      move(0);
+    }
+  });
+  
+  $('.previous_btn').on('click', function() {
+    if (currentIndex !== 0) {
+      move(currentIndex - 1);
+    } else {
+      move(3);
+    }
+  });
+  
+  $.each($slides, function(index) {
+    var $button = $('<a class="slide_btn">&bull;</a>');
+    
+    if (index === currentIndex) {
+      $button.addClass('active');
+    }
+    $button.on('click', function() {
+      move(index);
+    }).appendTo('.slide_buttons');
+    bulletArray.push($button);
+  });
+  
+  advance();
+});
+
+
+	var imageSlides = document.getElementsByClassName('imageSlides');
+var circles = document.getElementsByClassName('circle');
+var leftArrow = document.getElementById('leftArrow');
+var rightArrow = document.getElementById('rightArrow');
+var counter = 0;
+
+// HIDE ALL IMAGES FUNCTION
+function hideImages() {
+  for (var i = 0; i < imageSlides.length; i++) {
+    imageSlides[i].classList.remove('visible');
+  }
+}
+
+// REMOVE ALL DOTS FUNCTION
+function removeDots() {
+  for (var i = 0; i < imageSlides.length; i++) {
+    circles[i].classList.remove('dot');
+  }
+}
+
+// SINGLE IMAGE LOOP/CIRCLES FUNCTION
+function imageLoop() {
+  var currentImage = imageSlides[counter];
+  var currentDot = circles[counter];
+  currentImage.classList.add('visible');
+  removeDots();
+  currentDot.classList.add('dot');
+  counter++;
+}
+
+// LEFT & RIGHT ARROW FUNCTION & CLICK EVENT LISTENERS
+function arrowClick(e) {
+  var target = e.target;
+  if (target == leftArrow) {
+    clearInterval(imageSlideshowInterval);
+    hideImages();
+    removeDots();
+    if (counter == 1) {
+      counter = (imageSlides.length - 1);
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 1000);
+    } else {
+      counter--;
+      counter--;
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 1000);
+    }
+  } 
+  else if (target == rightArrow) {
+    clearInterval(imageSlideshowInterval);
+    hideImages();
+    removeDots();
+    if (counter == imageSlides.length) {
+      counter = 0;
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 1000);
+    } else {
+      imageLoop();
+      imageSlideshowInterval = setInterval(slideshow, 1000);
+    }
+  }
+}
+
+leftArrow.addEventListener('click', arrowClick);
+rightArrow.addEventListener('click', arrowClick);
+
+
+// IMAGE SLIDE FUNCTION
+function slideshow() {
+  if (counter < imageSlides.length) {
+    imageLoop();
+  } else {
+    counter = 0;
+    hideImages();
+    imageLoop();
+  }
+}
+
+// SHOW FIRST IMAGE, & THEN SET & CALL SLIDE INTERVAL
+setTimeout(slideshow, 1000);
+var imageSlideshowInterval = setInterval(slideshow, 10000);
+  $(".landscape").click(function(){
+    $('#landscape').hide()
+    $('#nature').show()
+    $('#imm').hide()
+
+  });
+
+  $(".nature").click(function(){
+    $('#nature').hide()
+    $('#landscape').show()
+  });
+
+$(document).ready(function(){
+  $(".show_all").click(function(){
+     $('#nature').show()
+    $('#landscape').show()
+    $('#imm').show()
+  });
+});
+</script>
+{% endblock %}
+
+

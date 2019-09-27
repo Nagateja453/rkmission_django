@@ -1,0 +1,72 @@
+{% extends "RK_mission/index.html" %}
+{% load staticfiles %}
+{% block content %}
+<style>
+	.puyt {
+    font-size: 32px;
+    color: #443f3f;
+    font-weight: 600;
+    margin: 10px 0 24px;
+}
+.map_border {
+    border-left: 4px solid #ea6422;
+    border-top: 8px solid #ea6422;
+    border-right: 15px solid #ea6422;
+    border-bottom: 25px solid #ea6422;
+}
+.daqw2
+{
+	width:100%!important;
+}
+</style>
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="col-md-1"></div>
+	<div class="col-md-7">
+		<h3 class="puyt">Locate Us</h3>
+		<div class=" map_border">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.7473755783303!2d88.39797855063256!3d22.438532285179623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271f66d11d40b%3A0xbccdfb6beada60cf!2sRamakrishna+Mission+Residential+College%2C+Narendrapur!5e0!3m2!1sen!2sin!4v1531392645548" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+		</div>
+		<br/>
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<h3 class="puyt">Quick Inquiry</h3>
+			<div class="inquiry_form_desgn">
+			<form action="" method="">
+				<input class="form-control" name="first_name" type="text" placeholder="Enter Your First Name*">
+				<br>
+				<input class="form-control" name="last_name" type="text" placeholder="Enter Your last Name*">
+				<br>
+				<input class="form-control" name="email_name" type="text" placeholder="Enter Your email Name*">
+				<br>
+				<input class="form-control" name="mobile number" type="text" placeholder="Enter Your mobile number Name*">
+				<br>
+				<textarea  class="daqw2" style="height: 100%;" name="address" required="" placeholder="enter ur message"></textarea>
+				<br>
+				<button class="subv a1">SUBMIT</button>
+			</form><br/>
+			<p>Note: WE’LL REVERT BACK TO YOU SOON.</p>
+		</div>
+	</div>
+</div>
+	<div class="col-md-3 col-sm-3 col-xs-12">
+			<div style="margin-top: 25%;">
+				<h4>Registered Office</h4>
+				<p>Shishu Vidya Mandir,
+				Narendrapur,Kolkata 700 103,India </p>
+			</div>
+			<div>
+				<h4>Contact Us</h4>
+				<p>Phone: +91-33-2477-2201, 02, 03, 06</p>
+				<p>E-mail: rkmvnarendrapur@gmail.com (Office)</p>
+			</div>
+			<div>
+				<h4>Contact Us</h4>
+				<p>Phone: +91-33-2477-2201, 02, 03, 06</p>
+				<p>E-mail: rkmvnarendrapur@gmail.com (Office)</p>
+			</div>
+	</div>
+	
+
+
+
+{% endblock %}

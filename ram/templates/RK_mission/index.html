@@ -1,0 +1,290 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<style>
+		.show {display: block;}
+			.prev, .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: 50px;
+              height:40px;
+              color:white;
+              padding: 16px;
+              margin-top: -22px;
+              font-weight: bold;
+              font-size: 13px;
+              transition: 0.6s ease;
+              border-radius:20px;
+              user-select: none;
+          }
+          .dewr
+          {
+          	color:black!important;
+          }
+            
+	</style>
+	</head>
+		<body>
+			<div class="container-fluid" style="padding:0px;margin-top:3%;">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="col-md-8 col-sm-8 col-xs-12"></div>
+							<div class="col-md-3 col-sm-3 col-xs-12 text-right">
+							 	<a href="/domestic_donation_view/" class="dewr"><b>Donation</b></a>
+							 	<a href="/contactus/" class="dewr"><b> | contactus</b></a>
+							</div>
+						<div class="col-md-1 col-sm-1 col-xs-12"></div>
+				</div>
+				<div class="col-md-12 no_padding desktop_view">
+					<ul class="menu">
+						<a href="/"><img class="site-logo" src="/static/images/logo_01.png"
+							style="margin-right:1%;padding-right:1%"></a>
+						<li class="dropdown">
+							<a href="#" class="mar">Holy Trio</a>
+							<ul class="submenu">
+								<li><a style="font-size: 15px;text-decoration:none;" href="/SRI-RAMAKRISHNA/">SRI-RAMAKRISHNA</a></li>
+								<li><a style="font-size: 15px;" href="/SRI-MA-SARADA-DEVI/">SRI MA SARADA DEVI</a></li>
+								<li><a style="font-size: 15px;" href="/SWAMI-VIVEKANANDA/">SWAMI VIVEKANANDA</a></li>
+							</ul>
+						</li>
+						<li class="dropdown" >
+							<a href="#" class="mar" >About</a>
+							<ul class="submenu" >
+								<li><a href="/about/Our-Vision/">our vision</a></li>
+								<li><a href="/about/Genesis/">Genesis</a></li>
+								<li><a href="/about/Our-Vidyalaya/">our vidyalaya</a></li>
+								<li><a href="/about/News-Archives/">news and Archies</a></li>
+								<li class="dropdown"><a href="#" >ramakrishna</a>
+									<ul class="submenu " >
+										<li><a style="font-size: 16px;" href="/about/movement/">Movement</a></li>
+										<li><a style="font-size: 16px;" href="/about/quarters/">Headquarters</a></li>
+										<li><a style="font-size: 16px;" href="/about/center-india/">Centres In India</a></li>
+										<li><a style="font-size: 16px;" href="/about/center-out/">Centres outsisde India</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown" >
+							<a href="#" class="mar">Academics</a>
+							<ul class="submenu">
+								<li><a href="/academics/departments/">Departments</a></li>
+								<li><a href="/academics/hobby-activities/">Hobby Activites</a></li>
+								<li><a href="/academics/games-sports/">Games & Sports</a></li>
+								<li><a href="/academics/Swimming-Pool/">Swimming pool</a></li>
+								<li><a href="#">Holiday list</a></li>
+								<li><a href="/academics/hostels/">Hostels</a></li>
+								<li><a href="/academics/multigym/">Multigym</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/admissions/admissions/" class="mar">Admission</a>
+						</li>
+						<li class="dropdown" >
+							<a href="#" class="mar" >Infrastructure</a>
+							<ul class="submenu">
+								<li><a href="/infrastructure/nature/">Nature</a></li>
+								<li><a href="/infrastructure/land/">LandScape</a></li>
+							</ul>
+						</li>
+						<li class="dropdown" >
+							<a href="#" class="mar" >Student corner</a>
+							<ul class="submenu" >
+								<li><a href="/fees/daily-routine/">Daily Routine</a></li>
+								<li><a href="/fees/annual-fees-charges/">Annual fees & Charges</a></li>	
+							</ul>
+						</li>
+						<li >
+							<a href="/careers/careers/" class="mar">Careers</a>
+						</li>
+						{% if request.user.is_superuser %}
+						<li class="dropdown" tab-index="0">
+							<a href="#" class="mar">Admin</a>
+							<ul class="submenu">
+								<li><a href="/table/">post</a></li>
+								<li><a href="/add_page_list/">page</a></li>
+							</ul>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+					<div class="col-xs-12  mob_view no_padding">
+						<div class="col-xs-12 dea">
+							<div class="col-md-2 col-sm-4 col-xs-5 logo_padding">
+							<a href="/"><img class="site-logo" src="/static/images/logo_01.png"
+								style="margin-right:1%;padding-right:1%"></a>
+							</div>
+							<h5 class="mob_line_icons" ><button class="mob_btn_icon"><i style="font-size: 24px;" class="fa fa-align-justify" aria-hidden="true"></i></button></h5>
+						</div>
+						<div class="col-xs-12">
+							<div class="col-xs-4"></div>
+							<div class="col-md-10 col-sm-8 col-xs-8">
+							<ul class="menu menu1">
+								<li class="dropdown">
+									<a href="#" class="mar mar1">Holy Trio</a>
+									<ul class="submenu">
+										<li><a style="font-size: 15px;text-decoration:none;" href="/SRI-RAMAKRISHNA/">SRI-RAMAKRISHNA</a></li>
+										<li><a style="font-size: 15px;" href="/SRI-MA-SARADA-DEVI/">SRI MA SARADA DEVI</a></li>
+										<li><a style="font-size: 15px;" href="/SWAMI-VIVEKANANDA/">SWAMI VIVEKANANDA</a></li>
+									</ul>
+								</li>
+								<li class="dropdown" >
+									<a href="#" class="mar mar1" >About</a>
+									<ul class="submenu" >
+										<li><a href="/about/Our-Vision/">our vision</a></li>
+										<li><a href="/about/Genesis/">Genesis</a></li>
+										<li><a href="/about/Our-Vidyalaya/">our vidyalaya</a></li>
+										<li><a href="/about/News-Archives/">news and Archies</a></li>
+										<li class="dropdown"><a href="#" >ramakrishna</a>
+											<ul class="submenu " >
+												<li><a style="font-size: 16px;" href="/about/movement/">Movement</a></li>
+												<li><a style="font-size: 16px;" href="/about/quarters/">Headquarters</a></li>
+												<li><a style="font-size: 16px;" href="/about/center-india/">Centres In India</a></li>
+												<li><a style="font-size: 16px;" href="/about/center-out/">Centres outsisde India</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="dropdown" >
+									<a href="#" class="mar mar1">Academics</a>
+									<ul class="submenu">
+										<li><a href="/academics/departments/">Departments</a></li>
+										<li><a href="/academics/hobby-activities/">Hobby Activites</a></li>
+										<li><a href="/academics/games-sports/">Games & Sports</a></li>
+										<li><a href="/academics/Swimming-Pool/">Swimming pool</a></li>
+										<li><a href="#">Holiday list</a></li>
+										<li><a href="/academics/hostels/">Hostels</a></li>
+										<li><a href="/academics/multigym/">Multigym</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/admissions/admissions/" class="mar mar1">Admission</a>
+								</li>
+								<li class="dropdown" >
+									<a href="#" class="mar mar1" >Infrastructure</a>
+									<ul class="submenu">
+										<li><a href="/infrastructure/nature/">Nature</a></li>
+										<li><a href="/infrastructure/land/">LandScape</a></li>
+									</ul>
+								</li>
+								<li class="dropdown" >
+									<a href="#" class="mar mar1" >Student corner</a>
+									<ul class="submenu" >
+										<li><a href="/fees/daily-routine/">Daily Routine</a></li>
+										<li><a href="/fees/annual-fees-charges/">Annual fees & Charges</a></li>	
+									</ul>
+								</li>
+								<li >
+									<a href="/careers/careers/" class="mar mar1">Careers</a>
+								</li>
+								{% if request.user.is_superuser %}
+								<li class="dropdown" tab-index="0">
+									<a href="#" class="mar">Admin</a>
+									<ul class="submenu">
+										<li><a href="/table/">post</a></li>
+										<li><a href="/add_page_list/">page</a></li>
+									</ul>
+								</li>
+								{% endif %}
+							</ul>
+							</div>
+						</div>
+					</div>
+				<div style="margin-top: 2%;">
+					{% block content %}{% endblock %}
+				</div>
+				<footer>
+					<div class="col-md-12 col-sm-12 col-xs-12 footer-widgets">
+						<div class="col-md-4 col-sm-4 col-xs-12" style="padding-left:8%;">
+							<h4 class="st3" style="font-size:20px;font-weight:bold;">Quick Links</h4>			
+								<p class="st3" style="margin-top:8%;">Holy Trio</p>
+									<p class=""><a href="/SRI-RAMAKRISHNA/" class="st4 n comds" >Sri Ramakrishna</a></p>
+									<p class=""><a href="SRI-MA-SARADA-DEVI" class="st4 n comds">Sri Ma Sarada Devi</a></p>
+									<p class=""><a href="/SWAMI-VIVEKANANDA/" class="st4 n comds">Swami Vivekananada</a></p>
+									<p class="st3">About Us</p>
+									<p class=""><a href="/about/Our-Vision/" class="st4 n comds" >Our Vision</a></p>
+									<p class=""><a href="/about/Genesis/" class="st4 n comds" >Genesis</a></p>
+									<p class=""><a href="/about/Our-Vidyalaya/"  class="st4 n comds">Our Vidyalaya</a></p>
+									<p class=""><a href="/about/News-Archives/" class="st4 n comds" >Vidyalaya News; Archives</a></p>
+									<p class=""><a href="/about/movement/" class="st4 n comds">Movement</a></p>
+									<p class=""><a href="/about/movement/" class="st4 n comds">Headquarters</a></p>
+									<p class=""><a href="/about/center-india/" class="st4 n comds">Centers In India</a></p>
+									<p class=""><a href="/about/center-out/"class="st4 n comds">Centers Outside India</a></p>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12 f "style="margin-top:2%;">
+							<p class="st5">Academics</p>
+								<p class=""><a href="/academics/departments/" class="st6">Departments</a></p>
+								<p class=""><a href="/academics/hobby-activities/" class="st6">Hobby Activities</a></p>
+								<p class=""><a href="" class="st6">Games Sports</a></p>
+								<p class=""><a href="academics/games-sports" class="st6">Swimming Pool</a></p>
+								<p class=""><a href="/academics/hostels/" class="st6">Hostel</a></p>
+								<p class=""><a href="/academics/multigym/" class="st6">Multigym</a></p>
+								<p class=""><a href="/admissions/admissions/" class="st5">Admissions</a></p>
+								<p class=""><a href="/careers/careers/" class="st5">Careers</a></p>
+								<p class="st7">Student Corner</p>
+								<p class=""><a href="/fees/daily-routine/" class="st6">Dialy Routine</a></p>
+								<p class=""><a href="/fees/annual-fees-charges/" class="st6">Annual Fees  Charges</a></p>
+								<p class=""><a href="/" class="st7">Contact Us</a></p>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12 f">
+							<h4 class="st3" style="font-size:20px;font-weight:bold;">Locate Us</h4>	
+								<p class="h">Ramakrishna Mission Vidyalaya,</p><p class="p">
+								Narendrapur, Kolkata 700 103,</p>
+								<p class="p">
+								India</p>
+									
+								<p class="h">Phone: +91-33-2477-2201, 012, 03, 06</p><p class="p">
+								Email: rkmvnarendrapur@gmail.comOffice</p>
+
+								<p><iframe style="border: 0;margin-top:6%;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14751.12093728119!2d88.401558!3d22.437296!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xef767fa208b93a3b!2sNarendrapur+Ramakrishna+Mission+Mahavidyalaya+Praktani!5e0!3m2!1sen!2sin!4v1529303147153" frameborder="0" allowfullscreen=""></iframe></p>
+						</div>
+					</div>
+				</footer>
+				<div class="col-md-12 col-sm-12 col-xs-12 foot ">
+					<div class="col-md-8 col-sm-12 col-xs-12" style="padding-left:18%;padding-top:2%; ">
+						<h5 style="font-size:1rem;">Copyright © 2018 Shishu Vidya Mandir, Narendrapur. All rights reserved.</h5>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12 " style="float:right;padding-top:2%;">
+						<a href="https://www.facebook.com/schoolserv/" target="_blank"><i class="fa fa-facebook-square fa-2x  book" aria-hidden="true"></i></a>
+					    <a href="https://twitter.com/schoolserv/" target="_blank"><i class="fa fa-twitter-square fa-2x  book" aria-hidden="true"></i></a>
+					    <a href="https://www.linkedin.com/company/school-serv-india-solutions-private-limited/" target="_blank"><i class="fa fa-linkedin-square fa-2x  book" aria-hidden="true"></i></a>
+					</div>
+					<br>
+					<br>
+					<a id="button" style="margin-top:3%;"></a>
+				</div>
+			</div>
+		</body>
+</html>
+<script type="text/javascript">
+	var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+ $(".menu1").hide();
+ $(document).ready(function(){
+        $(".mob_btn_icon").click(function(){
+            $(".menu1").toggle();
+        });
+    });
+
+
+
+</script>
+				
+		

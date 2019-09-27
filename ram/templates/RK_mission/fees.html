@@ -1,0 +1,61 @@
+{% extends "RK_mission/index.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="container-fluid content1">
+	<div class="col-md-12 col-sm-12 col-xs-12 ">
+		<div class="col-md-1 col-sm-1 col-xs-12 "></div>
+		<div class="col-md-7 col-sm-7 col-xs-12 re">
+			{% if page_fees.slug == 'daily-routine' %}
+				<h4 class="de">{{page_fees.title}}</h4>
+				{{page_fees.content|safe}}
+			{% endif %}
+			{% if page_fees.slug == 'annual-fees-charges' %}
+			 	<h4 class="de">{{page_fees.title}}</h4>
+			 {{page_fees.content|safe}}
+		 	{% endif %}
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-12 n">
+			<h4 class="de ">Quick links</h4>
+			<p class="quick n"><a href="/about/Our-Vidyalaya/" class="n ">Our Vidyalaya</a></p>
+			<p class="quick"><a href="/about/Our-Vision/" class="n" >Moto</a></p>
+			<p class="quick"><a href="/about/Genesis/" class="n">Genesis</a></p>
+			<p class="quick"><a href="/fees/daily-routine/" class="n">Dialy Routine</a></p>
+			<p class="quick">Ramakrishna Mission</p>
+			<p class="quick1"><a href="/about/movement/" class="n">Movements</a></p>
+			<p class="quick1"><a href="/about/quarters/" class="n">Head Quarters</a></p>
+			<p class="quick1"><a href="/about/center-india/" class="n">Centers In India</a></p>
+			<p class="quick1"><a href="/about/center-out/" class="n">Centers Outside India</a></p>
+			<p class="quick"><a href="/about/News-Archives/" class="n">News & Archives</a></p>
+			<p class="quick"><a href="/fees/annual-fees-charges/" class="n">Annual Fees & Charges</a></p>
+			<h3 style="margin-left: -1%;color: rgb(68, 63, 63);"><b>Inquiry Form</b></h3>	
+
+			<div class="inquiry_form_desgn">
+				<form action="" method="">
+					<input class="form-control" name="first_name" type="text" placeholder="Enter Your First Name*">
+					<br>
+					<input class="form-control" name="last_name" type="text" placeholder="Enter Your last Name*">
+					<br>
+					<input class="form-control" name="email_name" type="text" placeholder="Enter Your email Name*">
+					<br>
+					<input class="form-control" name="mobile number" type="text" placeholder="Enter Your mobile number Name*">
+					<br>
+					<select class="form-control">
+						<option>Select Preffered Programee*</option>
+						<option>Class I</option>
+						<option>Class II</option>
+						<option>Class III</option>
+						<option>Class IV</option>
+						<option>Class V</option>
+						<option>Class VI</option>
+						<option>Class VIII</option>
+					</select>
+					<button class="subv a1">SUBMIT</button>
+				</form><br/>
+				<p>Note: WE’LL REVERT BACK TO YOU SOON.</p>
+			</div>
+	</div>
+</div>
+
+		</div>
+	</div>
+{% endblock %}

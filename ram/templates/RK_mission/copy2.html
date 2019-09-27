@@ -1,0 +1,21 @@
+	<div class="row">
+						{% for a in imgi %}	
+					  <div class="column">
+					    <img src="/media/{{a.image_field_1}}" style="width:100%">
+					  <div class="column">
+					    <img src="/media/{{a.image_field_2}}"  style="width:100%">
+					  </div>
+					  <div class="column">
+					    <img src="/media/{{a.image_field_3}}"  style="width:100%">
+					  </div>
+					  <div class="column">
+					    <img src="/media/{{a.image_field_4}}"  style="width:100%">
+					  </div>
+					  <div class="column">
+					    <img src="/media/{{a.image_field_5}}"  style="width:100%">
+					  </div>
+					  <div class="column">
+					    <img src="/media/{{a.image_field_6}}"  style="width:100%">
+					  </div>
+					  {% endfor %}
+					</div>

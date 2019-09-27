@@ -1,0 +1,28 @@
+{% extends 'RK_mission/index.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="container-fluid">
+    <form action="/gallery/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="col-md-6 col-sm-6 col-xs-12 desg">
+			{{im_form.title}}
+			{{im_form.gallery}}
+		</div>	
+		<div class="col-md-6  col-sm-6 col-xs-12 desg">
+			{{im_form.image_field_1}}
+			{{im_form.image_field_2}}
+		</div>		
+		<div class="col-md-6 col-sm-6 col-xs-12 desg">
+			{{im_form.image_field_3}}
+			{{im_form.image_field_4}}
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-12  desg">
+			{{im_form.image_field_5}}
+			{{im_form.image_field_6}}
+		</div>
+</div>
+<button type="submit">save</button>
+</form>
+{% endblock %}

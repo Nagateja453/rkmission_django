@@ -1,0 +1,31 @@
+{% extends 'RK_mission/index.html' %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/tinymce.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/jquery.tinymce.min.js"></script>
+
+<div class="container-fluid content1">
+	<form action='/domestic_donations/' method='post' enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				{{donations_form.title}}
+				{{donations_form.slug}}	
+				{{donations_form.project_image2}}
+				{{donations_form.keywords}}
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				{{donations_form.excerpt}}
+				{{donations_form.meta_description}}
+				{{donations_form.ramakrishna}}
+			</div>
+		</div>
+		<div class="col-md-12 ol-sm-12 col-xs-12">
+				{{donations_form.content}}
+		</div>
+		<div class="col-md-12 ol-sm-12 col-xs-12 text-center">
+			<button class="btn btn-info but" type="submit">save</button>
+		</div>
+	</form>
+</div>
+{% endblock %}

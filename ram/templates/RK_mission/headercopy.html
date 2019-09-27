@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<head>
+		 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	</head>
+	
+		<body>
+
+			<div class="container-fluid content " style="">
+				<div class="row f " style="padding:0%;">
+				<!-- <img class="site-logo" src="http://192.168.0.157/wordpress/ramakrishna/wp-content/uploads/2019/01/logo_01.png"> -->
+					<div class="col-md-12 tex row" style="padding:0%;"> 
+						<div class="col-md-8 col-sm-8 col-xs-12"></div>
+						<div class="bl  col-md-3 col-sm-3 col-xs-12">
+					 	Donation | Contact Us
+						</div>
+					</div>
+					<div class="col-md-12 no_padding">
+						<div class="bl">
+							<nav>
+								<ul>
+									
+								<img class="site-logo" src="http://192.168.0.157/wordpress/ramakrishna/wp-content/uploads/2019/01/logo_01.png"
+									style="margin-right:1%;padding-right:1%">
+
+									<li class="sub-menu-parent" tab-index="0">
+										<a href="#" class="mar">Holy Trio</a>
+											<ul class="sub-menu" style="width:200px;margin-top:3%;">
+												<li><a href="#">Ramakrishna</a></li>
+												<li><a href="#">SRI MA SARADA DEVI</a></li>
+												<li><a href="#">SWAMI VIVEKANANDA</a></li>
+											</ul>
+									</li>
+									<li class="sub-menu-parent" tab-index="0">
+										<a href="#">About</a>
+											<ul class="sub-menu" style="width:200px;">
+												<li><a href="#">our vision</a></li>
+												<li><a href="#">Genesis</a></li>
+												<li><a href="#">our vidyalaya</a></li>
+												<li><a href="#">news and Archies</a></li>
+												<li><a href="#">RamaKrishna mission</a></li>
+											</ul>
+									</li>
+									<li class="sub-menu-parent" tab-index="0">
+										<a href="#">Academics</a>
+											<ul class="sub-menu" style="width:200px;margin-right:3%">
+												<li><a href="#">Departments</a></li>
+												<li><a href="#">Hobby Activites</a></li>
+												<li><a href="#">Games & Sports</a></li>
+												<li><a href="#">Swimming pool</a></li>
+												<li><a href="#">Holiday list</a></li>
+												<li><a href="#">Hostels</a></li>
+												<li><a href="#">Multigym</a></li>
+												<li><a href="#">Multigym</a></li>
+												
+											</ul>
+									</li>
+									<li class="sub-menu-parent" tab-index="0">
+										<a href="#">Admission</a>
+									</li>
+									<li class="sub-menu-parent" tab-index="0">
+										<a href="#">Infrastructure</a>
+											<ul class="sub-menu">
+												<li><a href="#">Nature</a></li>
+												<li><a href="#">LandScape</a></li>
+											</ul>
+									</li>
+									<li class="sub-menu-parent" tab-index="0">
+										<a href="#">Student corner</a>
+											<ul class="sub-menu" style="width:200px;">
+												<li><a href="#">Daily Routine</a></li>
+												<li><a href="#">Annual fees & Charges</a></li>	
+											</ul>
+									</li>
+									<li class="sub-menu-parent" tab-index="0">
+										<a href="#">Careers</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slideshow-container">
+                <div class="mySlides fade">
+                     <img src="http://192.168.0.157/wordpress/ramakrishna/wp-content/uploads/2019/01/v1-1500x500.jpg" style="width:100%">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="http://192.168.0.157/wordpress/ramakrishna/wp-content/uploads/2019/01/013-1350x450.jpg" style="width:100%">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </div>
+            <br>
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+                    <script>
+                        $(window).load(function() {
+                         $('.flexslider').flexslider({
+                        animation: "slide"
+                          });
+                        });
+
+                    <script>
+                    var slideIndex = 0;
+                    showSlides();
+
+                    function showSlides() {
+                      var i;
+                      var slides = document.getElementsByClassName("mySlides");
+                      var dots = document.getElementsByClassName("dot");
+                      for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                      }
+                      slideIndex++;
+                      if (slideIndex > slides.length) {slideIndex = 1}    
+                      for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";  
+                      dots[slideIndex-1].className += " active";
+                      setTimeout(showSlides, 1600); // Change image every 2 seconds
+                    }
+                    </script>
+                </body>
+         </html> 
+<!-- 
+                <script>
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+
+                        function plusSlides(n) {
+                          showSlides(slideIndex += n);
+                        }
+
+                        function currentSlide(n) {
+                          showSlides(slideIndex = n);
+                        }
+
+                        function showSlides(n) {
+                          var i;
+                          var slides = document.getElementsByClassName("mySlides");
+                          var dots = document.getElementsByClassName("dot");
+                          if (n > slides.length) {slideIndex = 1}    
+                          if (n < 1) {slideIndex = slides.length}
+                          for (i = 0; i < slides.length; i++) {
+                              slides[i].style.display = "none";  
+                          }
+                          for (i = 0; i < dots.length; i++) {
+                              dots[i].className = dots[i].className.replace(" active", "");
+                          }
+                          slides[slideIndex-1].style.display = "block";  
+                          dots[slideIndex-1].className += " active";
+                        }
+                </script> -->
+                </body>
+            </html> 
+
+			<footer>
+			<div class="container-fluid" style="padding:0px;">
+				<div class="row footer-widgets">
+					<div class="col-md-4" style="padding-left:8%;">
+						<h4 class="st3" style="font-size:20px;font-weight:bold;">Quick Links</h4>			
+							<p class="st3" style="margin-top:8%;">Holy Trio</p>
+								<p class=""><a href="" class="st4 n" >Sri Ramakrishna</a></p>
+								<p class=""><a href="" class="st4 n">Sri Ma Sarada Devi</a></p>
+								<p class=""><a href="" class="st4 n">Swami Vivekananada</a></p>
+								<p class="st3">About Us</p>
+								<p class=""><a href="/" class="st4 n" >Our Vision</a></p>
+								<p class=""><a href="/" class="st4 n" >Genesis</a></p>
+								<p class=""><a href="/"  class="st4 n">Our Vidyalaya</a></p>
+								<p class=""><a href="/" class="st4 n" >Vidyalaya News &amp; Archives</a></p>
+								<p class=""><a href="" class="st4 n">Movement</a></p>
+								<p class=""><a href="/" class="st4 n">Headquarters</a></p>
+								<p class=""><a href="" class="st4 n">Centers In India</a></p>
+								<p class=""><a href="/"class="st4 n">Centers Outside India</a></p>
+					</div>
+					<div class="col-md-4 f "style="margin-top:2%;">
+						<p class="st5">Academics</p>
+							<p class=""><a href="" class="st6">Departments</a></p>
+							<p class=""><a href="" class="st6">Hobby Activities</a></p>
+							<p class=""><a href="" class="st6">Games &amp; Sports</a></p>
+							<p class=""><a href="" class="st6">Swimming Pool</a></p>
+							<p class=""><a href="" class="st6">Hostel</a></p>
+							<p class=""><a href="" class="st6">Multigym</a></p>
+							<p class=""><a href="" class="st5">Admissions</a></p>
+							<p class=""><a href="" class="st5">Careers</a></p>
+							<p class="st7">Student Corner</p>
+							<p class=""><a href="" class="st6">Dialy Routine</a></p>
+							<p class=""><a href="" class="st6">Annual Fees &amp; Charges</a></p>
+							<p class=""><a href="/" class="st7">Contact Us</a></p>
+					</div>
+
+					<div class="col-md-4 f">
+						<h4 class="st3" style="font-size:20px;font-weight:bold;">Locate Us</h4>	
+							<p class="h">Ramakrishna Mission Vidyalaya,</p><p class="p">
+							Narendrapur, Kolkata 700 103,</p>
+							<p class="p">
+							India</p>
+								
+							<p class="h">Phone: +91-33-2477-2201, 012, 03, 06</p><p class="p">
+							Email: rkmvnarendrapur@gmail.comOffice</p>
+
+							<p><iframe style="border: 0;margin-top:6%;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14751.12093728119!2d88.401558!3d22.437296!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xef767fa208b93a3b!2sNarendrapur+Ramakrishna+Mission+Mahavidyalaya+Praktani!5e0!3m2!1sen!2sin!4v1529303147153" frameborder="0" allowfullscreen=""></iframe></p>
+					</div>
+				</div>
+			</div>
+			
+			</footer>
+			<footer class="site-footer" style="height:75px;">
+				<div class="col-md-12 col-sm-12 col-xs-12 row">
+					<div class="col-md-8 col-sm-12 col-xs-12" style="padding-left:18%;padding-top:2%; ">
+						<h5 style="font-size:1rem;">Copyright © 2018 Shishu Vidya Mandir, Narendrapur. All rights reserved.
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12" style="float:right;padding-top:2%;">
+						<a href="https://www.facebook.com/schoolserv/" target="_blank"><i class="fa fa-facebook-square fa-2x  book" aria-hidden="true"></i></a>
+					    <a href="https://twitter.com/schoolserv/" target="_blank"><i class="fa fa-twitter-square fa-2x  book" aria-hidden="true"></i></a>
+					    <a href="https://www.linkedin.com/company/school-serv-india-solutions-private-limited/" target="_blank"><i class="fa fa-linkedin-square fa-2x  book" aria-hidden="true"></i></a>
+					</div>
+						<a id="button"></a>
+			</footer>
+		</body>
+</html>
+<script type="text/javascript">
+	var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+
+</script>

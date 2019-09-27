@@ -1,0 +1,113 @@
+{% extends "RK_mission/index.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="container-fluid content1">
+	<div class="col-md-12 col-sm-12 col-xs-12 ted ">
+		<div class="col-md-1 col-sm-1 col-xs-12"></div>
+		<div class="col-md- col-sm-5 col-xs-12 holy">
+			<table class="table asd ">
+				<thead>
+					{% if post_all.slug == 'SRI-RAMAKRISHNA' %}
+					<tr>
+						<td colspan="2"><b>Date of Birth:</b> {{post_all.Date_of_Birth}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Place Of Birth:</b>{{post_all.Place_Of_Birth}} </td>
+					</tr>
+					<tr>
+						<td colspan="3"><b>Parents:</b>{{post_all.Parents}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Wife:</b>{{post_all.Wife}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Religious Views:</b>{{post_all.Philosopy}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Philosopy:</b>{{post_all.Philosopy}}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Place Of Birth:</b>{{post_all.Place_Of_Death}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Place Of Birth:</b>{{post_all.Memorial}}</td>
+					</tr>
+					{% endif %}
+					{% if post_all.slug == 'SRI-MA-SARADA-DEVI' %}
+					<tr>
+						<td colspan="2"><b>Date of Birth:</b> {{post_all.Date_of_Birth}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Place Of Birth:</b>{{post_all.Place_Of_Birth}} </td>
+					</tr>
+					<tr>
+						<td colspan="3"><b>Parents:</b>{{post_all.Parents}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Spouse:</b>{{post_all.Spouse}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Guru:</b>{{post_all.Guru}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Death:</b>{{post_all.Death}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Religious Views:</b>{{post_all.Religious_Views}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Place Of Death::</b>{{post_all.Place_Of_Death}}</td>
+					</tr>
+					{% endif %}
+					{% if post_all.slug == 'SWAMI-VIVEKANANDA' %}
+					<tr>
+						<td colspan="2"><b>Date of Birth:</b> {{post_all.Date_of_Birth}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Place Of Birth:</b>{{post_all.Place_Of_Birth}} </td>
+					</tr>
+					<tr>
+						<td colspan="3"><b>Parents:</b>{{post_all.Parents}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Education:</b>{{post_all.Education}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Religious Views:</b>{{post_all.Religious_Views}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Death:</b>{{post_all.Death}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Place Of Death:</b>{{post_all.Place_Of_Death}}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><b>Memorial:</b>{{post_all.Memorial}}</td>
+					</tr>
+					{% endif %}
+				</thead>
+			</table>
+		</div>
+		<div class="col-md-5 col-sm-5 col-xs-12">
+			<img class="hjk" src="/media/{{post_all.project_image1}}">
+		</div>
+		<div class="col-md-1 col-sm-1 col-xs-12"></div>
+	</div>
+	<div class="col-md-12 col-sm-12 col-xs-12 ">
+		<div class="col-md-1"></div>
+		<div class="col-md-9 tildeg">
+			{{post_all.title}}
+		</div>
+		<div class="col-md-1 col-sm-1 col-xs-12 ">
+		</div>
+	</div>
+	<div class="col-md-12 col-sm-12 col-xs-12 ">
+		<div class="col-md-1 col-sm-1 col-xs-12 "></div>
+		<div class="col-md-9 col-sm-9 tmar">
+			{{post_all.content | safe}}
+		</div>
+		<div class="col-md-1 col-sm-1 col-xs-12 ">
+		</div>
+	</div>
+</div>
+{% endblock %}

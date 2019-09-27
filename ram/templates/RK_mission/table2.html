@@ -1,0 +1,36 @@
+{% extends 'RK_mission/index.html' %}
+{% block content %}
+
+
+  <div class="container-fluid">
+      {% csrf_token %}
+      <h2>posts</h2>
+       <a href='/addpage/' style="float:right">add post</a>
+          <div class="col-md-12 col">
+             	<table  class="table table-striped">
+                <thead>
+                 	<tr>
+                     <th>title</th>
+                     	<th>slug</th>
+                     	<th>parents</th>
+                     
+                     <th>created on</th>
+                     <th>action</th>
+               		 </tr>
+                  </thead>
+                   <tbody>
+                    {% for i in a1 %}
+            		<tr>
+            			<td>{{i.title}}</td>
+            			<td>{{i.slug}}</td>
+            			<td>{{i.Parents}}</td>
+                        <td>{{i.created_on}}</td>
+                        <td><a href="/edit_add_page/{{i.id}}/"><button>edit</button></a></td>
+                      </tr>
+             			 {% endfor %}
+                   </tbody>
+            		</table>
+        	</div>
+</div>
+
+{% endblock %}

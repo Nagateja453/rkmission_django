@@ -1,0 +1,21 @@
+{% extends 'RK_mission/index.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="container-fluid">
+    <form action="/test/" method="post">
+      {% csrf_token %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		{{test_form.title}}
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		{{test_form.name}}
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		{{test_form.description}}
+	</div>
+</div>
+	<button type="submit">save</button>
+</form>
+{% endblock %}
